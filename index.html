@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.3.js"></script>
+    <script src="app.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body ng-controller="MainCtrl">
+        <table class="range-table" width="100%"> 
+     <tr> 
+        <td><input type="hidden"> <button class="btn btn-link" ng-click="save(selectedItem)"> <span class="glyphicon glyphicon-plus"></span></button> </td> 
+        <td><select ng-model="selectedItem" ng-options="i.items as i.items for i in curItem" ng-init="selectedItem=curItem[0].id"></select></td> </tr> </table> <table class="range-table" width="100%"> 
+      <tr> 
+      <tr ng-repeat="contact in contacts track by $index">
+     
+          <td>  <accordion>
+    <accordion-group ng-repeat="group in groups" >
+      <accordion-heading>
+        <span ng-click="opened(group, $index)">{{group.title}}{{contact}}</span>
+      </accordion-heading>
+      {{group.content}}{{contact}}
+    </accordion-group>    
+  </accordion>   
+  </td>
+      </tr>
+
+    </table>
+    
+
+
+  </body>
+
+</html>
